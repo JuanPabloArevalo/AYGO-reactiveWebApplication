@@ -13,8 +13,12 @@
 	Este permite crear una aplicación web reactiva, donde una de sus principales
 	funcionalidades de Spring WebFlux es proveer un framework no bloqueante es decir asincrono.
 	
-	Para este caso se pueden realizar multiples peticiones get a la url /facturas, este por debajo
-	consulta un Mock de persistencia con algunas facturas creadas.
+	Para este caso se pueden realizar multiples peticiones, este por debajo
+	consulta un Mock de persistencia con algunas facturas y personas creadas.
+	La ventaja de trabajar con esto, es que si cada petición toma 3 segundos, esos 3 segundos serán
+	el total a esperar, por el contrario si no fuera aplicación web reactiva, se demoraría
+	6 segundos, pues cada petición debería esperar la respuesta de la otra.
+	
 	
 ![Alt text](images/arquitecturaPaquetesProyecto.PNG)		
 
@@ -30,6 +34,8 @@
 	Se ha utilizado Docker para empaquetar la aplicación. Se utiliza un DockerFile 
 	para generar la aplicación.
 	Se ha subido la imagen a dockerhub. juanarevalomerchan/aygo_reactive_web_services
+	
+![Alt text](images/dockerImage.PNG)	
 
 ## AWS-CLI
 
@@ -59,6 +65,37 @@
 	9. Por cada instancia se conecta por ssh, para actualizar, descargar docker, iniciar docker
 	   y ejecutar una instancia de la imagen de dockerhub creada anteriormente.	
 	
+![Alt text](images/scriptImage.PNG)	
+
+
+### Ejecución
+	1. Ejecucuión del Script + Creación del Grupo de Seguridad
+	
+![Alt text](images/groupId.PNG)	
+
+	2. Creación de las instancias EC2
+	
+![Alt text](images/instancia1.PNG)	
+![Alt text](images/instancia2.PNG)	
+![Alt text](images/instancia3.PNG)		
+	
+	3. Conexión SSH e Instalación de Docker	
+	
+![Alt text](images/ConexionYDocket.PNG)	
+
+	4. Descarga Imagen Docker y Ejecución
+	
+![Alt text](images/InicializarDockerEjecutarImagen.PNG)	
+
+	5. Instancias en AWS
+	
+![Alt text](images/InstanciasAWS.PNG)	
+
+	6. Validación Ejecución Aplicación
+	
+![Alt text](images/ejecucion1.PNG)
+![Alt text](images/ejecucion2.PNG)
+![Alt text](images/ejecucion3.PNG)	
 	
 	
 		

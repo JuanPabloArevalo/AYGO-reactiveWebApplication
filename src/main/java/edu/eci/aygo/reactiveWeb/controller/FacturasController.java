@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.eci.aygo.reactiveWeb.application.Factura;
+import edu.eci.aygo.reactiveWeb.application.Persona;
 import edu.eci.aygo.reactiveWeb.services.Services;
 import reactor.core.publisher.Flux;
 
@@ -19,5 +20,11 @@ public class FacturasController {
 	@GetMapping("/facturas")
 	public Flux<Factura> buscarTodas() { 
 		return services.getFacturas();
+	}
+	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/personas")
+	public Flux<Persona> buscarTodasPersonas() { 
+		return services.getPersonas();
 	}
 }
