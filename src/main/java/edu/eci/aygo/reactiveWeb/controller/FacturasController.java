@@ -1,6 +1,7 @@
 package edu.eci.aygo.reactiveWeb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ public class FacturasController {
 	@Autowired
 	Services services;
 
+	@CrossOrigin(origins = "*")
 	@GetMapping("/facturas")
 	public Flux<Factura> buscarTodas() { 
 		return services.getFacturas();

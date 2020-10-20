@@ -25,8 +25,6 @@
 		tiene una lista Flux de facturas quemadas.
 		Application: Contiene la clase Factura.
 		
-		
-Prueba local	
 ![Alt text](images/localhostTest.PNG)	
 
 ## AWS-CLI
@@ -40,6 +38,9 @@ Prueba local
 		Default region name [None]: us-east-1
 		Default output format [None]: json
 	3. Realizar la construcción del JAR de la aplicación web.	
+	4. Ejecutar el script desde consola linux
+	5. Tener instalado JQ
+	
 		
 ### Script
 	El Script se ha creado para ejecutar con consola bash.
@@ -49,7 +50,8 @@ Prueba local
 	2. Cambiar los permisos a la llave creada
 	3. Crear un grupo de seguridad.
 	4. Añadir permisos al grupo de seguridad para recibir conexiones por ssh sobre el puerto 22.
-	5. Añadir permisos al grupo de seguridad para recibir peticiones por el puerto 8080 (Puerto de la aplicación web)
+	5. Añadir permisos al grupo de seguridad para recibir peticiones por el puerto 8080 
+	  (Puerto de la aplicación web TCP)
 	6. Crear 3 instancias EC2.
 	7. Desplegar el jar en cada una de las instancias
 	8. Ejecutar el jar de las instancias.
