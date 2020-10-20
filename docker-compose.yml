@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+   
+    webreact:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: webreact
+        ports: 
+            - 8080:8080
+    

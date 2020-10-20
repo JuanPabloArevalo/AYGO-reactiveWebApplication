@@ -25,7 +25,11 @@
 		tiene una lista Flux de facturas quemadas.
 		Application: Contiene la clase Factura.
 		
-![Alt text](images/localhostTest.PNG)	
+![Alt text](images/localhostTest.PNG)
+
+	Se ha utilizado Docker para empaquetar la aplicación. Se utiliza un DockerFile 
+	para generar la aplicación.
+	Se ha subido la imagen a dockerhub. juanarevalomerchan/aygo_reactive_web_services
 
 ## AWS-CLI
 
@@ -36,11 +40,7 @@
 		AWS Access Key ID [None]: {KeyId}
 		AWS Secret Access Key [None]: {SecretAccesKey}
 		Default region name [None]: us-east-1
-		Default output format [None]: json
-	3. Realizar la construcción del JAR de la aplicación web.	
-	4. Ejecutar el script desde consola linux
-	5. Tener instalado JQ
-	
+		Default output format [None]: json	
 		
 ### Script
 	El Script se ha creado para ejecutar con consola bash.
@@ -51,10 +51,13 @@
 	3. Crear un grupo de seguridad.
 	4. Añadir permisos al grupo de seguridad para recibir conexiones por ssh sobre el puerto 22.
 	5. Añadir permisos al grupo de seguridad para recibir peticiones por el puerto 8080 
-	  (Puerto de la aplicación web TCP)
+	   (Puerto de la aplicación web TCP)
 	6. Crear 3 instancias EC2.
-	7. Desplegar el jar en cada una de las instancias
-	8. Ejecutar el jar de las instancias.
+	7. Consulta las instacias creadas dentro del grupo de seguridad mencionado anteriormente.
+	   Las escribe en un archivo json llamado instancias.json	
+	8. Por cada instancia busca el dns
+	9. Por cada instancia se conecta por ssh, para actualizar, descargar docker, iniciar docker
+	   y ejecutar una instancia de la imagen de dockerhub creada anteriormente.	
 	
 	
 	
